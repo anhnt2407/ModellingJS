@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="js/PN.js"></script>
+        <script>
+            var MyPetriNet = new PetriNet();
+            
+            //MyPetriNet.places     .push( new Place     ( "Place01" , 10 ) );
+            //MyPetriNet.transitions.push( new Transition( "Trans01" )      );
+            //MyPetriNet.arcs       .push( new Arc       ( "Place01" , "Trans01" , PlaceToTransition , 1 ) );
+            
+//            MyPetriNet.addPlace     ( "Place01" , 1 );
+//            MyPetriNet.addPlace     ( "Place02" , 1 );
+//            MyPetriNet.addPlace     ( "Place03" , 1 );
+//            
+//            MyPetriNet.addTransition( "Trans01" );
+//            MyPetriNet.addTransition( "Trans02" );
+//            MyPetriNet.addTransition( "Trans03" );
+//    
+//            MyPetriNet.addArc       ( "Place01" , "Trans01" );
+//            MyPetriNet.addArc       ( "Trans01" , "Place02" );
+//            
+//            MyPetriNet.addArc       ( "Place02" , "Trans02" );
+//            MyPetriNet.addArc       ( "Trans02" , "Place03" );
+//            
+//            MyPetriNet.addArc       ( "Place03" , "Trans03" );
+//            MyPetriNet.addArc       ( "Trans03" , "Place01" );
+            
+            MyPetriNet.create( "Place01(1) > Trans01 > Place02(0) > "
+                             + "Trans02 > Place03(0) > Trans03 > "
+                             + "Place01(1)" );
+                     
+            MyPetriNet.create( "Place04(10) > Trans01" );
+            
+            // Explicação: 
+            // Place01(2) = lugar com o nome (Place01) e a quant. de tokens (2)
+            // >          = arco com um valor
+            // 2>         = arco com dois valores
+            // Trans01    = nome da transição
+            
+            // Observação: Todos os lugares devem ter o '()' mesmo que seja zero.
+            // Se não, o código irá identificar como uma transição.
+            
+            // TODO: arco inibidor!
+            
+            MyPetriNet.start( true );
+        </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+    </body>
+</html>
